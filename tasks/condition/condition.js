@@ -10,10 +10,14 @@ let z1;
 let z2;
 const x = 3;
 const y = 7;
-
 //TODO put your code here
+if (y < 10){
+    z1 = x + y;
+} else if (y >= 10){
+    z1 = x * y;
+}
 
-
+(y < 10) ? z2 = x + y : z2 = x * y ;
 
 /** TODO
  * The system receives 3 params - alpha, beta, operator.
@@ -27,8 +31,24 @@ const beta = 7;
 const operator = "add";
 
 //TODO put your code here
-
-
+// switch (operator) {
+//     case "add":
+//         task2 = alpha + beta;
+//         break;
+//     case "subtract":
+//         task2 = alpha - beta;
+//         break;
+//     case "multiply":
+//         task2 = alpha * beta;
+//         break;
+//     case "divide":
+//         task2 == alpha / beta;
+//         break;
+// }
+if (operator === "add") task2 = alpha + beta;
+else if (operator === "subtract") task2 = alpha - beta;
+else if (operator === "multiply") task2 = alpha * beta;
+else if (operator === "divide") task2 = alpha / beta;
 
 /**
  * TODO
@@ -45,6 +65,12 @@ const redemption = 420;
 let discount;
 
 //TODO put your code here
+
+// if  (redemption - 351 < 0) discount = 0;
+// else if (redemption - 1351 < 0) discount = 15;
+// else if (redemption - 2701 < 0) discount = 30;
+// else if (redemption - 6501 < 0) discount = 45; 
+(redemption - 351 < 0) ? discount = 0 : (redemption - 1351 < 0) ? discount = 15 : (redemption - 2701 < 0) ? discount = 30 : discount = 45;
 
 
 module.exports = {
