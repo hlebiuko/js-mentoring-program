@@ -37,10 +37,7 @@ let str;
 const substr = ["I", " love", " JS"];
 
 str = "";
-for (let i = 0; i < substr.length; i++) {
-str += substr[i];
-}
-console.log(str);
+for (let el in substr) { str += el; };
 
 
 /** TODO
@@ -57,10 +54,7 @@ const personIncomes = {
 
 totalIncome=0;
 ArrayOfValues = Object.values(personIncomes);
-for (let i = 0; i < Object.values(personIncomes).length; i++){
-  totalIncome += ArrayOfValues[i];
-}
-console.log(totalIncome);
+for (let el in personIncomes) { totalIncome += (personIncomes[el]); };
 
 
 module.exports = {

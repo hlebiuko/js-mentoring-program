@@ -13,9 +13,7 @@ const y = 7;
 //TODO put your code here
 if (y < 10){
     z1 = x + y;
-} else if (y >= 10){
-    z1 = x * y;
-}
+} else { z1 = x * y; }
 
 (y < 10) ? z2 = x + y : z2 = x * y ;
 
