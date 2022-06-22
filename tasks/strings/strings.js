@@ -8,7 +8,9 @@
  * console.log(reverseString(123)) // 'This is not a string!'
  */
 function reverseString(str) {
-  
+  if (typeof str === 'string') { 
+    return str.split("").reverse().join("");
+  } else return ("This is not a string!")
 }
 
 /**
@@ -21,9 +23,8 @@ function reverseString(str) {
 * console.log(centuryFromYear(1601)) // 17
 */
 function centuryFromYear(year) {
-  
+    return year % 100 != 0 ? Math.floor(year / 100) + 1 : Math.floor(year / 100);
 }
-
 /**
  * Calculate count of the provided char in the string
  * @param {string} str
@@ -35,7 +36,7 @@ function centuryFromYear(year) {
  * console.log(strCount('', 'z')) // 0
  */
 function strCount(str, char) {
-
+  return (str.split(char)).length - 1;
 }
 
 /**
@@ -50,7 +51,7 @@ function strCount(str, char) {
  * console.log(truncateString('This', 6)) // 'This'
  */
 function truncateString(str, num) {
-
+  return str.length > num ? str.slice(0, num) + "..." : str;
 }
 
 /**
@@ -61,8 +62,9 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-
+  return text.replace( /10/g , 'ten');
 }
+
 
 /**
  * replace value in square brackets with CONFIDENTIAL
@@ -72,7 +74,7 @@ function replace10(text) {
  * console.log(replaceConfidential("lorem [ipsum] si dolor")) // lorem [CONFIDENTIAL] si dolor
  */
 function replaceConfidential(text) {
-
+  return text.replace(/\[(\w+)\]/g, '[CONFIDENTIAL]') ;
 }
 
 module.exports = {
