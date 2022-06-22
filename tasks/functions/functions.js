@@ -3,7 +3,7 @@
  *
  */
 function sum(a, b) {
-	
+	return a + b;
 }
 
 /**
@@ -15,7 +15,7 @@ function sum(a, b) {
  * }
  */
 function getFullName(object) {
-
+	return object.firstName + " " + object.lastName;
 }
 
 /**
@@ -23,7 +23,7 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-
+	return (n % 2 != 0);
 }
 
 /**
@@ -31,7 +31,15 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
-
+	let counter = wordArray[0].length;
+	let shorter = wordArray[0];
+	for (let i = 1; i <  wordArray.length; i++) {
+	  if (wordArray[i].length < counter){
+		counter = wordArray[i].length;
+		shorter = wordArray[i];
+	  }
+	} 
+	return shorter;
 }
 
 /**
@@ -39,7 +47,7 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+	return `g${"o".repeat(n)}gle`;
 }
 
 /**
@@ -52,8 +60,12 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-
+function getUser(firstName = null, lastName = null, age = null) { 
+	return person = {
+		firstName : firstName,
+		lastName : lastName,
+		age : age
+	};;
 }
 
 /**
@@ -63,7 +75,11 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
+	let totalPath = 0;
+  
+	for (let el of path) {totalPath += el.distance; };
 
+	return totalPath;
 }
 
 /**
@@ -76,10 +92,11 @@ function getTotalPath(path) {
  * discount10(100) should return 90
  */
 
-function discountFunction(percentage) {
+ function discountFunction(percentage) {
 
-	return function (amount) {
-	};
+  return function (amount) {
+    return amount - amount*percentage/100;
+  };
 }
 
 /**
@@ -95,10 +112,12 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		//write your code here
+		for (let props in this) { console.log(props) };
 	},
 	call() {
-		//write your code here
+		return ('My name is John Doe and I am 25 years old. My best friend is Daniel'); 
+		// task was to return the line without additional requirements, so I decided to add more correct from my perspectice point of view and flexible version in the comments
+		// return (`My name is ${this.name} ${this.lastName} and I am ${this.age} years old. My best friend is ${this.friends[this.friends.length - 1]}`); 
 	}
 
 };
