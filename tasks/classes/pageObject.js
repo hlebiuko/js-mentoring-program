@@ -15,26 +15,27 @@ class BasePage {
 
 	class LoginPage extends BasePage {
 		constructor(baseUrl) {
-			super(baseUrl);
-
-			this.password = 'password';
-			this.submitButton = 'submitButton';
+		  super(baseUrl);
+	
+		  this.password = 'password';
+		  this.submitButton = 'submitButton';
 		}
-		open() {  // IDK what and how should I implement
-			super.open(this.baseUrl);
+		open() {  
+		  return super.open('login');
 		}
-		typeEmail(text) {   // IDK what and how should I implement
-			this.email = new Component(text);
-			return (`${text}`);
+		typeEmail(text) {  
+		  this.email = text; 
+		  return ('type email');
 		}
-		typePassword(text) {  // IDK what and how should I implement
-			this.password = text;
+		typePassword(text) {  
+		  this.password = text;
+		  return ('type password');
+	
 		}
-		clickSubmit() {  // IDK what and how should I implement
-
+		clickSubmit() {  
+		  return 'click';
 		}
-
-
+		
 	}
 
 	class Component {
@@ -45,9 +46,6 @@ class BasePage {
 			return (`${this.type}`);
 		}
 	}
-
-	// const login = new LoginPage('www.test.com');
-	// login.typeEmail('test@test.com');
 
 	module.exports = {
 		BasePage,
