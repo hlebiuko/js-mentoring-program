@@ -3,18 +3,51 @@
  */
 
 class BasePage {
+	constructor(baseUrl) {
+		this.baseUrl = baseUrl;
+		this.footer = new Component('footer');
+		this.header = new Component('header');
+	}
+	open(url) {
+		return (`${this.baseUrl}/${url}`);
+		}
+	}
+
+	class LoginPage extends BasePage {
+		constructor(baseUrl) {
+		  super(baseUrl);
 	
-}
-
-class LoginPage {
-
-}
-
-class Component {
+		  this.password = 'password';
+		  this.submitButton = 'submitButton';
+		}
+		open() {  
+		  return super.open('login');
+		}
+		typeEmail(text) {  
+		  this.email = text; 
+		  return ('type email');
+		}
+		typePassword(text) {  
+		  this.password = text;
+		  return ('type password');
 	
-}
+		}
+		clickSubmit() {  
+		  return 'click';
+		}
+		
+	}
 
-module.exports = {
-	BasePage,
-	LoginPage
-};
+	class Component {
+		constructor(type) {
+			this.type = type;
+		}
+		review() {
+			return (`${this.type}`);
+		}
+	}
+
+	module.exports = {
+		BasePage,
+		LoginPage
+	};

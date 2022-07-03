@@ -10,9 +10,9 @@
     "test:functions": "mocha tasks/functions/test/*.spec.js",
     "test:arrays": "mocha tasks/arrays/test/*.spec.js",
     "test:strings": "mocha tasks/strings/test/*.spec.js",
-    "test:objects": "mocha tasks/objects/test/objects.spec.js",
-    "test:classes": "mocha tasks/classes/test/classes.spec.js",
-    "test:po": "mocha tasks/classes/test/po.spec.js",
+    "test:objects": "mocha tasks/oop/test/objects.spec.js",
+    "test:classes": "mocha tasks/oop/test/classes.spec.js",
+    "test:po": "mocha tasks/oop/test/po.spec.js",
     "test:async": "mocha tasks/async/*.spec.js",
     "test:nodejs": "mocha tasks/nodeJs/test/*.spec.js"
   },
