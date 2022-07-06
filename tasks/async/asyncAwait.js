@@ -23,6 +23,8 @@ const {
  */
 async function asyncPromiseResolve() {
   //PLACE YOUR CODE HERE:
+  let result = await promiseResolve();
+  return (result + " with async await");
 }
 
 /**
@@ -33,6 +35,12 @@ async function asyncPromiseResolve() {
  */
 async function asyncPromiseReject() {
   //PLACE YOUR CODE HERE:
+  try{
+   await promiseReject(); 
+  } catch (err){
+    result = err; 
+  }
+  return (result + " with async await");
 }
 
 /**
@@ -43,6 +51,9 @@ async function asyncPromiseReject() {
  */
 async function asyncPromiseAll() {
   //PLACE YOUR CODE HERE:
+  let result = [];
+  result.push(await getDogs(), await getCats(), await getBirds());
+  return result;
 }
 
 module.exports = {
