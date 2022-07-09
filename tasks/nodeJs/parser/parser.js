@@ -22,12 +22,22 @@
  * 2. Check yourself by running "npm run test:nodejs"
  *
  */
-const fs = require('fs/promises');
+ const fs = require('fs/promises');
 
-const jsonParser = async () => {
-  //put your code here
-};
-
-module.exports = {
-  jsonParser,
-};
+ const jsonParser = async () => {
+   const data = await fs.readFile("./tasks/nodeJs/parser/test.json", "utf8");
+   const json = JSON.parse(data);
+ 
+   const parsedData = [];
+   await json.list.entries.forEach((item, index) => {
+       parsedData.push({ docId: `http://doc.epam.com/${item?.entry.id.split(".html")[0]}` });
+   });
+ 
+   await fs.writeFile('./tasks/nodeJs/parser/parsed.json', `${JSON.stringify(parsedData)}`);
+ };
+ 
+ jsonParser();
+ 
+ module.exports = {
+   jsonParser,
+ };
